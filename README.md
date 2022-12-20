@@ -1,1 +1,1 @@
-# devopskonkurs
+# Repozytorium DevOps Konkurs
