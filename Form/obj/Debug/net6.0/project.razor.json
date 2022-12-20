@@ -12,39 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 711681436,
-        "Kind": "Components.Component",
-        "Name": "Form.Pages.Counter",
-        "AssemblyName": "Form",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Form.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": -1003513248,
-        "Kind": "Components.Component",
-        "Name": "Form.Pages.Counter",
-        "AssemblyName": "Form",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Form.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Form.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 70197779,
         "Kind": "Components.Component",
         "Name": "Form.Pages.FetchData",
@@ -74,6 +41,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Form.Pages.FetchData",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 711681436,
+        "Kind": "Components.Component",
+        "Name": "Form.Pages.Counter",
+        "AssemblyName": "Form",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Form.Pages.Counter"
+        }
+      },
+      {
+        "HashCode": -1003513248,
+        "Kind": "Components.Component",
+        "Name": "Form.Pages.Counter",
+        "AssemblyName": "Form",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Form.Pages.Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Form.Pages.Counter",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
