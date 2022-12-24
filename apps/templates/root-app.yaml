@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    path: apps/
+    repoURL: https://github.com/kuba-g/devopskonkurs.git
+    targetRevision: HEAD
+    username: kuba-g
+    password: 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
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
