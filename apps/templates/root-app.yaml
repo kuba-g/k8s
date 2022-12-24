@@ -13,8 +13,6 @@ spec:
     path: apps/
     repoURL: https://github.com/kuba-g/devopskonkurs.git
     targetRevision: HEAD
-    username: kuba-g
-    password: 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
   syncPolicy:
     automated:
       prune: true
