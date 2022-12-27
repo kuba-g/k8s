@@ -3,6 +3,18 @@ entries:
   bankform:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-12-27T23:29:07.779800001Z"
+    description: A Helm chart for Kubernetes
+    digest: 060e3a15ff5121643b19984926512758db875624ba598eb88580f2c14b7aeebd
+    name: bankform
+    sources:
+    - https://github.com/kuba-g/devopskonkurs
+    type: application
+    urls:
+    - https://github.com/kuba-g/k8s/releases/download/bankform-0.1.1/bankform-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-12-20T23:04:50.457812211Z"
     description: A Helm chart for Kubernetes
     digest: 22d99b8e1128a1a40668795584c63805e8b954205dbf45859b4fa6ff34e6e58c
@@ -13,4 +25,4 @@ entries:
     urls:
     - https://github.com/kuba-g/devopskonkurs/releases/download/bankform-0.1.0/bankform-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-20T23:04:50.457819912Z"
+generated: "2022-12-27T23:29:07.779807701Z"
