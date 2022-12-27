@@ -9,92 +9,153 @@
     </div>
 
     <div class="row">
-        <div class="col-4">
-            <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" 
-                    id="list-credit-list" data-toggle="list" href="#list-credit" 
-                    role="tab" aria-controls="credit">Kredyt inwestycyjny</a>
+        <div class="col-4" role="tabpanel">
+            <div class="list-group" id="list-tab">
+                <a class="list-group-item list-group-item-action active" data-bs-toggle="list"
+                    href="#list-credit" id="list-credit-list" role="tab">
+                    Kredyt inwestycyjny</a>
                     
-                <a class="list-group-item list-group-item-action" 
-                    id="list-loan-list" data-toggle="list" href="#list-loan" 
-                    role="tab" aria-controls="loan">Pożyczka AGRO</a>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
+                    href="#list-loan" role="tab" id="list-loan-list" >
+                    Pożyczka AGRO</a>
             </div>
         </div>
 
         <div class="col-12">
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-credit" 
-                    role="tabpanel" aria-labelledby="list-credit-list">
-                    
-                <EditForm Model="@credit">
-                    <DataAnnotationsValidator />
-                    <ValidationSummary />
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="FullName" class="control-label">Imię i nazwisko</label>
-                                <input for="FullName" class="form-control" @bind="@credit.FullName" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="ContractDate" class="control-label">Data zawarcia umowy</label>
-                                <input type="date" for="ContractDate" class="form-control" @bind="@credit.ContractDate" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="FinancingPeriod" class="control-label">Okres finansowania</label>
-                                <input for="FinancingPeriod" placeholder="NNN miesięcy" class="form-control" @bind="@credit.FinancingPeriod" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="InvestmentValue" class="control-label">Wartość inwestycji</label>
-                                <input for="InvestmentValue" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.InvestmentValue" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Contribution" class="control-label">Wkład własny</label>
-                                <input for="Contribution" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.Contribution" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="CreditAmount" class="control-label">Kwota kredytu</label>
-                                <input for="CreditAmount" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.CreditAmount" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Rate" class="control-label">Oprocentowanie kredytu</label>
-                                <input for="Rate" placeholder="NN,NN %" class="form-control" @bind="@credit.Rate" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Commission" class="control-label">Prowizja</label>
-                                <input for="Commission" placeholder="NN,NN %" class="form-control" @bind="@credit.Commission" />
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Schedule" class="control-label">Typ harmonogramu spłat</label>
-                                <input for="Schedule" class="form-control" @bind="@credit.Schedule" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <button type="reset" class="btn btn-secondary">Wyczyść</button>
-                                <button type="submit" class="btn btn-primary">Wygeneruj harmonogram</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab-pane active" role="tabpanel" id="list-credit" 
+                    >
                 
-                </EditForm>
+                    <EditForm Model="@credit" OnValidSubmit="@HandleValidLoanSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="FullName" class="control-label">Imię i nazwisko</label>
+                                    <input for="FullName" class="form-control" @bind="@credit.FullName" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ContractDate" class="control-label">Data zawarcia umowy</label>
+                                    <input type="date" for="ContractDate" class="form-control" @bind="@credit.ContractDate" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="FinancingPeriod" class="control-label">Okres finansowania</label>
+                                    <input for="FinancingPeriod" placeholder="NNN miesięcy" class="form-control" @bind="@credit.FinancingPeriod" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="InvestmentValue" class="control-label">Wartość inwestycji</label>
+                                    <input for="InvestmentValue" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.InvestmentValue" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Contribution" class="control-label">Wkład własny</label>
+                                    <input for="Contribution" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.Contribution" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="CreditAmount" class="control-label">Kwota kredytu</label>
+                                    <input for="CreditAmount" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@credit.CreditAmount" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Rate" class="control-label">Oprocentowanie kredytu</label>
+                                    <input for="Rate" placeholder="NN,NN %" class="form-control" @bind="@credit.Rate" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Commission" class="control-label">Prowizja</label>
+                                    <input for="Commission" placeholder="NN,NN %" class="form-control" @bind="@credit.Commission" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Schedule" class="control-label">Typ harmonogramu spłat</label>
+                                    <InputSelect @bind-Value="credit.Schedule">
+                                        <option value="">Wybierz:</option>
+                                        <option value="1">miesięczny</option>
+                                        <option value="2">kwartalny</option>
+                                    </InputSelect>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <button type="reset" class="btn btn-secondary">Wyczyść</button>
+                                    <button type="submit" class="btn btn-primary">Wygeneruj harmonogram</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </EditForm>
+                   
+                
 
                 </div>
 
-                <div class="tab-pane fade" id="list-loan" 
-                    role="tabpanel" aria-labelledby="list-loan-list">
+                <div class="tab-pane" role="tabpanel" id="list-loan" 
+                    >
+                
+                
+                    <EditForm Model="@loan" OnValidSubmit="@HandleValidLoanSubmit">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="FullName" class="control-label">Imię i nazwisko</label>
+                                    <input for="FullName" class="form-control" @bind="@loan.FullName" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ContractDate" class="control-label">Data zawarcia umowy</label>
+                                    <input type="date" for="ContractDate" class="form-control" @bind="@loan.ContractDate" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="FinancingPeriod" class="control-label">Okres finansowania</label>
+                                    <input for="FinancingPeriod" placeholder="NNN miesięcy" class="form-control" @bind="@loan.FinancingPeriod" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="CreditAmount" class="control-label">Kwota kredytu</label>
+                                    <input for="CreditAmount" placeholder="NNN NNN NNN, NN PLN" class="form-control" @bind="@loan.CreditAmount" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Rate" class="control-label">Oprocentowanie kredytu</label>
+                                    <input for="Rate" placeholder="NN,NN %" class="form-control" @bind="@loan.Rate" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Schedule" class="control-label">Typ harmonogramu spłat</label>
+                                    <InputSelect @bind-Value="loan.Schedule">
+                                        <option value="">Wybierz:</option>
+                                        <option value="1">miesięczny</option>
+                                        <option value="2">kwartalny</option>
+                                    </InputSelect>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <button type="reset" class="btn btn-secondary">Wyczyść</button>
+                                    <button type="submit" class="btn btn-primary">Wygeneruj harmonogram</button>
+                                </div>
+                            </div>
+                        </div>
                     
+                    </EditForm>
+                
+
                 </div>
             </div>
         </div>
@@ -106,16 +167,27 @@
 </div>
 @code {
     private Credit credit = new();
+    private AgroLoan loan = new();
 
-    private void HandleValidSubmit()
+    private void HandleValidCreditSubmit()
     {
-        // Process the valid form
+        decimal principalPayment, interestPayment;
+
+        // miesieczny
+        if (credit.Schedule != null && credit.Schedule.Equals("1")) 
+        {
+            principalPayment = (decimal) credit.CreditAmount / (decimal) credit.FinancingPeriod;
+            interestPayment = (decimal) credit.CreditAmount * ((decimal) credit.Commission + (decimal) credit.Rate) / 100;
+
+            
+        }
     }
 
-    private async Task ToggleList() 
+    private void HandleValidLoanSubmit()
     {
-        //await JSRuntime.InvokeVoidAsync("interop.toggleList", "list-credit");
-        await JSRuntime.InvokeVoidAsync("interop.toggleList", "list-loan");
+
     }
+
+    
 }
 

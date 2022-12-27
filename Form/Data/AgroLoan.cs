@@ -9,13 +9,13 @@ public class AgroLoan
     public DateTime? ContractDate { get; set;}
 
     [Required]
-    public int FinancingPeriod { get; set; }
+    public int? FinancingPeriod { get; set; }
 
     [Required]
-    public decimal CreditAmount { get; set; }
+    public decimal? CreditAmount { get; set; }
 
     [Required]
-    public decimal Rate { get; set; }
+    public decimal? Rate { get; set; }
 
     [Required]
     public string? Schedule { get; set; }
