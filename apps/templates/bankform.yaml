@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-bankform
+  namespace: default
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bankform
+  project: default
+  source:
+    chart: bankform 
+    repoURL: https://kuba-g.github.io/k8s/
+    targetRevision: *
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
