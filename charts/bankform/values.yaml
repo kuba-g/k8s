@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: dfgkjdfgmnb/devops-bank-form:latest
+  repository: dfgkjdfgmnb/devops-bank-form
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
