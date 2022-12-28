@@ -2,8 +2,8 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS base
 WORKDIR /app
 
 COPY *.sln .
-COPY Form/*.csproj ./Form
-COPY Tests/*.csproj ./Tests
+COPY Form/*.csproj ./Form/
+COPY Tests/*.csproj ./Tests/
 RUN dotnet restore
 
 FROM base AS test
