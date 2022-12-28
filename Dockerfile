@@ -6,9 +6,10 @@ COPY Form/*.csproj ./Form/
 COPY Tests/*.csproj ./Tests/
 RUN dotnet restore
 
+COPY . .
+
 FROM base AS test
 WORKDIR /app/Tests
-CMD ["dotnet", "test", "--logger:trx"]
 RUN dotnet test
 
 FROM base AS publish
