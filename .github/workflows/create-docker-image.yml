@@ -30,4 +30,4 @@ jobs:
         with:
           context: ./Form
           push: true
-          tags: dfgkjdfgmnb/devops-bank-form:latest
+          tags: dfgkjdfgmnb/devops-bank-form:latest:1.16.0
