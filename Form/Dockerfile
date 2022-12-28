@@ -8,6 +8,7 @@ WORKDIR /src
 COPY ["Form.csproj", "."]
 RUN dotnet restore "Form.csproj"
 COPY . .
+RUN dotnet test "../Tests"
 RUN dotnet build "Form.csproj" -c Release -o /app/build
 
 FROM build AS publish

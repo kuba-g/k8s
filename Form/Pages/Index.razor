@@ -26,7 +26,7 @@
                 <div class="tab-pane active" role="tabpanel" id="list-credit" 
                     >
                 
-                    <EditForm Model="@credit" OnValidSubmit="@HandleValidLoanSubmit">
+                    <EditForm id="credit-form" Model="@credit" OnValidSubmit="@HandleValidLoanSubmit">
                         <DataAnnotationsValidator />
                         <ValidationSummary />
 
@@ -173,12 +173,15 @@
     {
         decimal principalPayment, interestPayment;
 
-        // miesieczny
-        if (credit.Schedule != null && credit.Schedule.Equals("1")) 
+        if (credit.Schedule != null) 
         {
             principalPayment = (decimal) credit.CreditAmount / (decimal) credit.FinancingPeriod;
             interestPayment = (decimal) credit.CreditAmount * ((decimal) credit.Commission + (decimal) credit.Rate) / 100;
 
+            if (credit.Schedule.Equals("2")) {
+                principalPayment /= 3;
+            }
+            
             
         }
     }
