@@ -13,7 +13,7 @@ spec:
   source:
     chart: bankform 
     repoURL: https://kuba-g.github.io/k8s/
-    targetRevision: 0.1.2
+    targetRevision: 0.1.4
   syncPolicy:
     automated:
       prune: true
